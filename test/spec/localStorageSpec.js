@@ -231,7 +231,7 @@ describe('localStorageService', function() {
       addItem('key', '777'),
       expectAdding('ls.key', angular.toJson('777')),
       expectMatching('key', '777')
-    )
+    );
   });
 
   it('should be able to get items', inject(
@@ -371,7 +371,7 @@ describe('localStorageService', function() {
       }
       expect(localStorageService.length()).toEqual(10);
       expect($window.localStorage.length).toEqual(20);
-  }));
+    }));
 
   it('should be able to clear all owned keys from storage',inject(function($window, localStorageService) {
     for(var i = 0; i < 10; i++) {
@@ -513,7 +513,7 @@ describe('localStorageService', function() {
 
     it('should be able to clear all owned keys from cookie', inject(function(localStorageService, $document) {
       localStorageService.set('ownKey1', 1);
-      $document.cookie = "username=John Doe";
+      $document.cookie = 'username=John Doe';
       localStorageService.clearAll();
       expect(localStorageService.get('ownKey1')).toEqual(null);
       expect($document.cookie).not.toEqual('');
