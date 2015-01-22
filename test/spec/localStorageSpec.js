@@ -18,7 +18,7 @@ describe('localStorageService', function() {
     };
   }
 
-  function addItem(key, value) {
+  function addItemWithPut(key, value) {
     return function($window, localStorageService) {
       elmSpy = spyOn($window.localStorage, 'setItem').andCallThrough();
       localStorageService.put(key, value);
@@ -148,6 +148,12 @@ describe('localStorageService', function() {
   it('should add key to localeStorage null if value not provided', inject(
     addItem('foo'),
     expectAdding('ls.foo', null)
+  ));
+
+  it('should add key to localStorage using put method', inject(
+    addItemWithPut('key', 777),
+    expectAdding('ls.key', angular.toJson(777)),
+    expectMatching('key', 777)
   ));
 
   it('should support to set custom prefix', function() {
