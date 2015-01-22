@@ -18,6 +18,14 @@ describe('localStorageService', function() {
     };
   }
 
+  function addItem(key, value) {
+    return function($window, localStorageService) {
+      elmSpy = spyOn($window.localStorage, 'setItem').andCallThrough();
+      localStorageService.put(key, value);
+    };
+  }
+
+
   function removeItem(key) {
     return function($window, localStorageService) {
       elmSpy = spyOn($window.localStorage, 'removeItem').andCallThrough();
