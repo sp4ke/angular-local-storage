@@ -1,6 +1,6 @@
 /**
  * An Angular module that gives you access to the browsers local storage
- * @version v0.1.5 - 2014-11-04
+ * @version v0.1.5 - 2015-01-22
  * @link https://github.com/grevory/angular-local-storage
  * @author grevory <greg@gregpike.ca>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -30,7 +30,7 @@ var angularLocalStorage = angular.module('LocalStorageModule', []);
 angularLocalStorage.provider('localStorageService', function() {
 
   // You should set a prefix to avoid overwriting any local storage variables from the rest of your app
-  // e.g. localStorageServiceProvider.setPrefix('youAppName');
+  // e.g. localStorageServiceProvider.setPrefix('yourAppName');
   // With provider you can use config as this:
   // myApp.config(function (localStorageServiceProvider) {
   //    localStorageServiceProvider.prefix = 'yourAppName';
@@ -433,6 +433,7 @@ angularLocalStorage.provider('localStorageService', function() {
       isSupported: browserSupportsLocalStorage,
       getStorageType: getStorageType,
       set: addToLocalStorage,
+      put: addToLocalStorage,
       add: addToLocalStorage, //DEPRECATED
       get: getFromLocalStorage,
       keys: getKeysForLocalStorage,
