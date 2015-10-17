@@ -1,6 +1,6 @@
 angular-local-storage
 =====================
-
+Note to myself: Used for an other project, do not delete
 An Angular module that gives you access to the browsers local storage, **v0.1.5**
 
 [![NPM version][npm-image]][npm-url]
